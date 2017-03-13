@@ -13,10 +13,31 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var storyboard : UIStoryboard?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        Parse.initialize(
+            with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "Instagram"
+                configuration.clientKey = "timkim321"
+                configuration.server = "https://fathomless-earth-13553.herokuapp.com/parse"
+            })
+        )
+        
+        // check if user is logged in.
+//        storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        if PFUser.current() != nil {
+//            
+//            // load tab bar controller
+//            let tabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarViewController")
+//            
+//            // initialize a new navigation controller with the tab bar controller as its rootViewController
+//            let navC = UINavigationController(rootViewController: tabBarController!)
+//            
+//            // set the window's root view controller to be your new navigation controller
+//            self.window?.rootViewController = navC
+//        }
+        
         return true
     }
 
