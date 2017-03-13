@@ -25,18 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         
         // check if user is logged in.
-//        storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        if PFUser.current() != nil {
-//            
-//            // load tab bar controller
-//            let tabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarViewController")
-//            
-//            // initialize a new navigation controller with the tab bar controller as its rootViewController
-//            let navC = UINavigationController(rootViewController: tabBarController!)
-//            
-//            // set the window's root view controller to be your new navigation controller
-//            self.window?.rootViewController = navC
-//        }
+        storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if PFUser.current() != nil {
+            
+            // load tab bar controller
+            let tabBarController = storyboard?.instantiateViewController(withIdentifier: "TabBarViewController")
+            
+            // initialize a new navigation controller with the tab bar controller as its rootViewController
+            let navC = UINavigationController(rootViewController: tabBarController!)
+            
+            // set the window's root view controller to be your new navigation controller
+            self.window?.rootViewController = navC
+        }
         
         return true
     }
